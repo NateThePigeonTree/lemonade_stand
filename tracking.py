@@ -7,10 +7,21 @@ def tracking(cash, value):
     return cash
 
 def shop(cash):
-    whichProduct= input("Which product do you want to buy? Lemons/Sugar/Ice/Cups")
-    if whichProduct=="lemons":
+    whichProduct= input("Which product do you want to buy? Lemons/Sugar/Ice/Cups\n")
+    if whichProduct.lower=="lemons":
         cash = tracking(cash,lemons)
         return(cash)
+    if whichProduct.lower()=="sugar":
+        cash = tracking(cash,sugar)
+        return(cash)
+    if whichProduct.lower()=="ice":
+        cash = tracking(cash,ice)
+        return(cash)
+    if whichProduct.lower()=="cups":
+        cash = tracking(cash,cups)
+        return(cash)
+
+
 
 print(shop(100))
     # BUY LEMONS
