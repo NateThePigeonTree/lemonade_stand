@@ -20,6 +20,7 @@ def shop(cash):
     if whichProduct.lower()=="cups":
         cash = tracking(cash,cups)
         return(cash)
+# shop
 
 
 
