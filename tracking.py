@@ -8,7 +8,7 @@ def tracking(cash, value):
 
 def shop(cash):
     whichProduct= input("Which product do you want to buy? Lemons/Sugar/Ice/Cups\n")
-    if whichProduct.lower=="lemons":
+    if whichProduct.lower()=="lemons":
         cash = tracking(cash,lemons)
         return(cash)
     if whichProduct.lower()=="sugar":
@@ -27,4 +27,5 @@ def shop(cash):
 print(shop(100))
     # BUY LEMONS
     # LEMONS ARE 5$
+
     # Money = tracking(Money, lemon_5)
