@@ -43,9 +43,11 @@ def shop():
     # BUY LEMONS
 
     # LEMONS ARE 5$
+
     # Money = tracking(Money, lemon_5)
 
 while True:
     if shop() == 0:
         break
 print(f"Cash: {cash}\nIce: {p_ice}\nLemons: {p_lemons}\nSugar: {p_sugar}\nCups: {p_cups}")
+
