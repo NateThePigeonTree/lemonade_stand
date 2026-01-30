@@ -8,9 +8,10 @@ def recipe():
         lemonss=int(input("How many lemons would you like (ex.1/2/3):"))
         sugarr=int(input("How much sugar would you like (ex.1/2/3):"))
         icee=int(input("How much ice would you like (ex.1/2/3):"))
-        print (lemonss,sugarr,icee)
+        print ("Each glass of lemonade will cost you"lemonss+sugarr+icee*0.20)
 
         
+
 
 
 
