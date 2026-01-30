@@ -5,11 +5,13 @@ def inventory():
                 }
 
 def recipe():
-        lemons=int(input("How many lemons would you like (ex.1/2/3):"))
-        sugar=int(input("How much sugar would you like (ex.1/2/3):"))
-        ice=int(input("How much ice would you like (ex.1/2/3):"))
+        lemonss=int(input("How many lemons would you like (ex.1/2/3):"))
+        sugarr=int(input("How much sugar would you like (ex.1/2/3):"))
+        icee=int(input("How much ice would you like (ex.1/2/3):"))
+        print (lemonss,sugarr,icee)
 
         
+
 
 
 
