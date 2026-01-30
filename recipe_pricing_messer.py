@@ -1,5 +1,5 @@
 def inventory():
-        inven={"Lemons":30
+        inven={"Lemons":30,
                 "Sugar":50,
                 "ice":50
                 }
@@ -10,6 +10,7 @@ def recipe():
         ice=int(input("How much ice would you like (ex.1/2/3):"))
 
         
+
 
 
 
