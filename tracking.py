@@ -1,12 +1,16 @@
-lemons = -5
-sugar = -1
-ice= -3
-cups=-3
-p_sugar = 0
-p_lemons = 0
-p_ice = 0
-p_cups = 0
-cash = 100
+prices= {"price_of_lemons":-5,
+         "price_of_sugar": -3,
+         "price_of_ice": -3,
+         "price_of_cups":-5}
+
+
+inventory = {
+    "p_sugar": 0,
+    "p_lemons" : 0,
+    "p_ice" : 0,
+    "p_cups" : 0,
+    "cash":100}
+
 
 
 def tracking(value, modifier):
@@ -14,28 +18,25 @@ def tracking(value, modifier):
     return value
 
 def shop():
-    global cash
-    global p_lemons 
-    global p_sugar
-    global p_ice
-    global p_cups
+    global inventory
+    global prices
     #p_ice, p_cups, p_sugar
     whichProduct= input("Which product do you want to buy? Lemons/Sugar/Ice/Cups\n")
     if whichProduct.lower()=="lemons":
-        cash = tracking(cash,lemons)
-        p_lemons = tracking(p_lemons,50)
+        inventory["cash"] = tracking(inventory["cash"],inventory["p_lemons"])
+        inventory["p_lemons"] = tracking(inventory["p_lemons"],50)
         return
     elif whichProduct.lower()=="sugar":
-        cash = tracking(cash,sugar)
-        p_sugar = tracking(p_sugar,25)
+        inventory["cash"] = tracking(inventory["cash"], inventory["p_sugar"])
+        inventory["p_sugar"] = tracking(inventory["p_sugar"],25)
         return
     elif whichProduct.lower()=="ice":
-        cash = tracking(cash,ice)
-        p_ice = tracking(p_ice,25)
+        inventory["cash"]= tracking(inventory["cash"],inventory["p_ice"])
+        inventory["p_ice"] = tracking(inventory["p_ice"],25)
         return
     elif whichProduct.lower()=="cups":
-        cash== tracking(cash,cups)
-        p_cups = tracking(p_cups,100)
+        inventory["cash"]== tracking(inventory["cash"],inventory["p_cups"])
+        inventory["cash"] = tracking(inventory["cash"],100)
         return
     else:
         return 0
@@ -49,5 +50,5 @@ def shop():
 while True:
     if shop() == 0:
         break
-print(f"Cash: {cash}\nIce: {p_ice}\nLemons: {p_lemons}\nSugar: {p_sugar}\nCups: {p_cups}")
+print(f"Cash: {inventory["cash"]}\nIce: {inventory["p_ice"]}\nLemons:{inventory["p_lemons"]}\nSugar:{inventory["p_sugar"],}\nCups: {inventory["p_cups"]}")
 

@@ -1,14 +1,13 @@
-def inventory():
-        inven={"Lemons":30,
-                "Sugar":50,
-                "ice":50
-                }
+import tracking
+
+
 
 def recipe():
-        lemonss=int(input("How many lemons would you like (ex.1/2/3):"))
-        sugarr=int(input("How much sugar would you like (ex.1/2/3):"))
-        icee=int(input("How much ice would you like (ex.1/2/3):"))
-        print ("Each glass of lemonade will cost you"lemonss+sugarr+icee*0.15)
+        
+        receipelemons=int(input("How many lemons would you like (ex.1/2/3):"))
+        recipesugar=int(input("How much sugar would you like (ex.1/2/3):"))
+        recipeice=int(input("How much ice would you like (ex.1/2/3):"))
+        
 
         
 
