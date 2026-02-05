@@ -11,6 +11,11 @@ inventory = {
     "p_cups" : 0,
     "cash":100}
 
+recipe = {
+    "r_sugar":0,
+    "r_lemons":0,
+    "r_ice":0
+}
 
 
 def tracking(value, modifier):
@@ -41,14 +46,9 @@ def shop():
     else:
         return 0
 
-    # BUY LEMONS
-
-    # LEMONS ARE 5$
-
-    # Money = tracking(Money, lemon_5)
 
 while True:
     if shop() == 0:
         break
-print(f"Cash: {inventory["cash"]}\nIce: {inventory["p_ice"]}\nLemons:{inventory["p_lemons"]}\nSugar:{inventory["p_sugar"],}\nCups: {inventory["p_cups"]}")
+print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar'],}\nCups: {inventory['p_cups']}")
 
