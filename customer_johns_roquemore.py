@@ -1,7 +1,7 @@
 customers = [10]
 for i in range(10):
-    customers.append(customers(10))
-customer1 = customers()
+    customers.append(customers[i] + 1)
+customer1 = customers(0)
 attributes = customers.get_customer_attributes()
 
 {"sweetness": 2,
