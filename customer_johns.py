@@ -19,7 +19,7 @@ class Customer:
         )
         self.price_point = (
             price_point if price_point is not None
-            else round(random.uniform(0.25, 4.0),2)
+            else round(random.uniform(1.00, 4.0),2)
         )
 
     def get_customer_attributes(self):
@@ -28,3 +28,4 @@ class Customer:
             "ice": self.ice_preference,
             "price": self.price_point
         }
+     
