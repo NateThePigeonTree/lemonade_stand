@@ -6,7 +6,7 @@ def set_recipe():
         recipe["r_ice"]=int(input("How much ice would you like (ex.1/2/3):"))
         
 set_recipe()
-print(f"In your recipe you have:\n{recipe['r_lemons']} lemons,")
+print(f"In your recipe you have:\n{recipe['r_lemons']} lemons,\n{recipe['r_sugar']} sugar,\n {recipe['r_ice']}")
 
 
 
