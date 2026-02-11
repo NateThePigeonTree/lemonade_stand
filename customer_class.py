@@ -8,7 +8,7 @@
 import random
 
 class Customer:
-    def __init__(self, sweetness_preference=2, ice_preference=1, price_point=1.75):
+    def __init__(self, sweetness_preference = None, ice_preference = None, price_point = None):
         self.sweetness_preference = (
             sweetness_preference if sweetness_preference is not None
             else random.randint(0, 3)
