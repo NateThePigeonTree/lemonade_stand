@@ -1,8 +1,8 @@
 from customer_class import Customer
+import tracking
 num=1
 Customer_list=[]
 new_customer = Customer()
 
-pref = new_customer.get_customer_attributes()
-
-print(pref["ice"])
+def gameday():
+    "l"
