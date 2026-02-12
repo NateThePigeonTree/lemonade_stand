@@ -16,7 +16,8 @@ recipe = {
     "r_lemons":0,
     "r_ice":0
 }
-
+print("Welcome to the shop")
+print("==================")
 
 def tracking(value, modifier):
     value += modifier
@@ -50,5 +51,5 @@ def shop():
 while True:
     if shop() == 0:
         break
-print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar'],}\nCups: {inventory['p_cups']}")
+print(f"Cash:{inventory['cash']}\nIce:{inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups:{inventory['p_cups']}")
 
