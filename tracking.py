@@ -4,27 +4,11 @@ prices= {"price_of_lemons":-5,
          "price_of_cups":-5}
 
 
-inventory = {
-    "p_sugar": 0,
-    "p_lemons" : 0,
-    "p_ice" : 0,
-    "p_cups" : 0,
-    "cash":100}
-
-recipe = {
-    "r_sugar":0,
-    "r_lemons":0,
-    "r_ice":0
-}
-
-
 def tracking(value, modifier):
     value += modifier
     return value
 
-def shop():
-    global inventory
-    global prices
+def shop(inventory):
     #p_ice, p_cups, p_sugar
     whichProduct= input("Which product do you want to buy? Lemons/Sugar/Ice/Cups\n")
     if whichProduct.lower()=="lemons":
@@ -44,15 +28,11 @@ def shop():
         return
     elif whichProduct.lower()=="cups":
         inventory["cash"]== tracking(inventory["cash"],prices["price_of_cups"])
-        inventory["p_cups"] = tracking(inventory["cash"],100)
+        inventory["p_cups"] = tracking(inventory["p_cups"],100)
         print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
         return
     else:
         return 0
 
 
-while True:
-    if shop() == 0:
-        break
-print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
 
