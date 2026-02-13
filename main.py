@@ -1,5 +1,4 @@
 from tracking import shop
-
 inventory = {
     "p_sugar": 0,
     "p_lemons" : 0,
@@ -16,6 +15,7 @@ recipe = {
 shop(inventory)
 
 while True:
-    if shop() == 0:
+    if shop(inventory) == 0:
         break
-print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
+print(f"Cash:{inventory['cash']}\nIce:{inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups:{inventory['p_cups']}")
+

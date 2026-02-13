@@ -3,10 +3,13 @@ prices= {"price_of_lemons":-5,
          "price_of_ice": -3,
          "price_of_cups":-5}
 
+name=input("Hello!\nWhat is your name:")
+print("Well",name,"you have just broken your living room TV while your parents are on a 7 day vacation away from home.\nSo now you have decided to make a lemonade stand to raise the $300 you need to buy a new TV.\nGOODLUCK AND HAVE FUN!\n==================")
+
 def tracking(value, modifier):
     value += modifier
     return value
-
+print("=====INVENTORY=====")
 def shop(inventory):
     #p_ice, p_cups, p_sugar
     whichProduct= input("Which product do you want to buy? Lemons/Sugar/Ice/Cups\n")
@@ -32,4 +35,6 @@ def shop(inventory):
         return
     else:
         return 0
+
+
 
