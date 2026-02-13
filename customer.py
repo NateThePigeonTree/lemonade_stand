@@ -8,11 +8,23 @@ def production(recipe, inventory, new_customer = Customer()):
     # Decide if it will return a true/false for if they bought from you.
     #`if _they_bought:
     #       Do the thing`   
-    if random_customer["sweetness"] == 1 or random_customer["price"] >=4 :
-        print("I hate sour and expensive lemonade")
+    cold = recipe["r_ice"]
+    sweet = recipe["r_sugar"] - recipe["r_lemons"]
+    l_price = recipe["price"]
+    if random_customer["sweetness"] >=  sweet:
+        print("THIS IS TOO SOUR!")
+    
+    elif random_customer["ice"] <= cold:
+        print("THIS IS TOO COLD!")
+
+    elif random_customer["price"] >= l_price:
+        print("YOU'RE TOO MONEY LOVING TO BE A GOOD LEMONADE STAND!")
     else:
-        inventory["lemons"] -= recipe["lemons"]
+        inventory["p_lemons"] -= recipe["lemons"]
+        inventory["p_ice"] -= recipe["ice"]
+        inventory["p_sugar"] -= recipe["sugar"]
         inventory["money"] += recipe["price"]
+
         
     
 

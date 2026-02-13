@@ -1,6 +1,7 @@
 from tracking import shop
 from recipe_pricing_messer import set_recipe
 from customer import production
+import random
 
 inventory = {
     "p_sugar": 0,
@@ -13,7 +14,7 @@ recipe = {
     "r_sugar":0,
     "r_lemons":0,
     "r_ice":0,
-    "price": 1
+    "price": 0
 }
 
 shop(inventory)
@@ -29,5 +30,8 @@ print(f"In your recipe you have:\n{recipe['r_lemons']} lemons,\n{recipe['r_sugar
 
 print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
 
-production(recipe, inventory)
-print(inventory)
+for _ in range(random.randint(0,20)):
+    production(recipe, inventory)
+    wait(random.random()*2)
+
+print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
