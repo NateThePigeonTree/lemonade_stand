@@ -26,7 +26,7 @@ def shop(inventory):
         print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
         return
     elif whichProduct.lower()=="cups":
-        inventory["cash"]== tracking(inventory["cash"],prices["price_of_cups"])
+        inventory["cash"] = tracking(inventory["cash"],prices["price_of_cups"])
         inventory["p_cups"] = tracking(inventory["p_cups"],100)
         print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
         return
