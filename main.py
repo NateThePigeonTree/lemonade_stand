@@ -22,7 +22,7 @@ while True:
         break
 
         
-from recipe_pricing_messer import set_recipe 
+from recipe_pricing_messer import set_recipe
 
 print(f"In your recipe you have:\n{recipe['r_lemons']} lemons,\n{recipe['r_sugar']} sugar,\n{recipe['r_ice']} ice cubes")
 

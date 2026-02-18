@@ -11,8 +11,8 @@ def production(recipe, inventory, new_customer = Customer()):
     if random_customer["sweetness"] == 1 or random_customer["price"] >=4 :
         print("I hate sour and expensive lemonade")
     else:
-        inventory["lemons"] -= recipe["lemons"]
-        inventory["money"] += recipe["price"]
+        inventory["p_lemons"] -= recipe["r_lemons"]
+        inventory["cash"] += recipe["price"]
         
     
 
