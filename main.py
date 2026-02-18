@@ -2,6 +2,7 @@ from tracking import shop
 from recipe_pricing_messer import set_recipe
 from customer import production
 import random
+from time import sleep
 
 inventory = {
     "p_sugar": 0,
@@ -32,6 +33,6 @@ print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory[
 
 for _ in range(random.randint(0,20)):
     production(recipe, inventory)
-    wait(random.random()*2)
+    # sleep(random.random()*2)
 
 print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
