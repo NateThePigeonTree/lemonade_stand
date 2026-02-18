@@ -11,7 +11,7 @@ def production(recipe, inventory, new_customer = Customer()):
     cold = recipe["r_ice"]
     sweet = recipe["r_sugar"] - recipe["r_lemons"]
     l_price = recipe["price"]
-    if abs(random_customer["sweetness"] - sweet) >= 1:
+    if random_customer["sweetness"] - sweet >= 1:
         print("THIS IS TOO SOUR!")
     
     elif random_customer["ice"] <= cold:
