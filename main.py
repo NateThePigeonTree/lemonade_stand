@@ -31,13 +31,11 @@ print(f"In your recipe you have:\n{recipe['r_lemons']} lemons,\n{recipe['r_sugar
 print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
 
 production(recipe, inventory)
-<<<<<<< HEAD
-=======
+
 print(inventory)
 
 for _ in range(random.randint(0,20)):
     production(recipe, inventory)
->>>>>>> 2c6df5224c780d9a3fac135fdb7adce97f5784f6
     # sleep(random.random()*2)
 
 print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
