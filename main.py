@@ -2,6 +2,7 @@ from tracking import shop
 from customer import production
 import random
 from time import sleep
+from recipe_pricing_messer import set_recipe
 
 inventory = {
     "p_sugar": 0,
@@ -17,22 +18,18 @@ recipe = {
     "price": 0
 }
 
-shop(inventory)
 
 while True:
     if shop(inventory) == 0:
         break
 
         
-from recipe_pricing_messer import set_recipe
 
+set_recipe(recipe)
 print(f"In your recipe you have:\n{recipe['r_lemons']} lemons,\n{recipe['r_sugar']} sugar,\n{recipe['r_ice']} ice cubes")
 
 print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
 
-production(recipe, inventory)
-
-print(inventory)
 
 for _ in range(random.randint(0,20)):
     production(recipe, inventory)
