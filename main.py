@@ -3,7 +3,7 @@ from customer import production
 import random
 from time import sleep
 from recipe_pricing_messer import set_recipe
-
+from intro_messer import intro
 inventory = {
     "p_sugar": 0,
     "p_lemons" : 0,
@@ -17,7 +17,15 @@ recipe = {
     "r_ice":0,
     "price": 0
 }
+name = input("Hi, What is your name")
+intro(name)
 
+choice = input("Which thing do you want to do?\n1.Shop\n2.See inventory\n3.Set recipe\n4.Start Day")
+
+# IF choice = 1 OR choice = "words" THEN {
+#       DO THING
+#} ELSE IF choice = 2 THEN {
+#       DO THING 2}
 
 while True:
     if shop(inventory) == 0:
@@ -33,7 +41,7 @@ print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory[
 
 for _ in range(random.randint(0,20)):
     production(recipe, inventory)
-    # sleep(random.random()*2)
+    #sleep(random.random()*2)
 
 print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
 

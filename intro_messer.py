@@ -1,5 +1,5 @@
 #intro to game like storylin# 
-name=input("Hello!\nWhat is your name:")
-print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~BACKGROUND~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-check = input("It is november 28th 2025(press enter to continue)")
-check = input("You are watching the Texas V.S Texas A&M game")
+def intro(name):
+    print(f"Well {name} it is summertime and your friend's birthday is coming up,\n and your friend wants some new nintendo switch 2 games. However because those games cost your life savings plus the average mortage,\n you decide to open a lemonade stand and see if you can make enough to buy one.\n You have seven days til his birthday, and you have to make 100 dollars.")
+    print("~~~~~~~~~~~~~~~~~~~~~~GOOD LUCK!~~~~~~~~~~~~~~~~~~~~~~~~~")
+intro()
