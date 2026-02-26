@@ -18,7 +18,7 @@ def production(recipe, inventory):
         # print(f"DEBUG:\nSweet: {random_customer["sweetness"] - sweet}, Cold: {random_customer["ice"]} : {cold}, Price: {random_customer["price"]} : {l_price}")
         if random_customer["sweetness"] - sweet <= 1:
             print("THIS IS TOO SOUR!")
-        
+            
         elif random_customer["ice"] <= cold:
             print("THIS IS TOO COLD!")
 
@@ -29,7 +29,11 @@ def production(recipe, inventory):
             inventory["p_lemons"] -= recipe["r_lemons"]
             inventory["p_ice"] -= recipe["r_ice"]
             inventory["p_sugar"] -= recipe["r_sugar"]
+            inventory["p_cups"] -= 1
             inventory["cash"] += recipe["price"]
+            if inventory["p_lemons"] == 0 or inventory["p_ice"] == 0 or inventory["p_sugar"] == 0 or inventory["p_cups"] == 0:
+                print("Your inventory is empty :(")
+                return 0
             # print("DEBUG: LEMONADE BOUGHT")
 
             
