@@ -31,9 +31,7 @@ def production(recipe, inventory):
             inventory["p_sugar"] -= recipe["r_sugar"]
             inventory["p_cups"] -= 1
             inventory["cash"] += recipe["price"]
-            if inventory["p_lemons"] == 0 or inventory["p_ice"] == 0 or inventory["p_sugar"] == 0 or inventory["p_cups"] == 0:
-                print("Your inventory is empty :(")
-                return 0
+            
             # print("DEBUG: LEMONADE BOUGHT")
 
             
