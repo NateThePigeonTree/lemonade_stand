@@ -45,7 +45,7 @@ def day():
             production(recipe, inventory)
             sleep(random.random())
             if inventory["p_lemons"] <= 0 or inventory["p_ice"] <= 0 or inventory["p_sugar"] <= 0 or inventory["p_cups"] <= 0:
-                print("Your inventory is empty :(")
+                print("Need more supplies :(")
                 break
         print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
     else:
