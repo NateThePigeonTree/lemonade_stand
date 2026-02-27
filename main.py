@@ -1,4 +1,4 @@
-from tracking import shop, see_inven
+from tracking import shop,see_inven
 from customer import production
 import random
 from time import sleep
@@ -44,8 +44,8 @@ def day():
         for _ in range(random.randint(0,20)):
             production(recipe, inventory)
             sleep(random.random())
-            if inventory["p_lemons"] == 0 or inventory["p_ice"] == 0 or inventory["p_sugar"] == 0 or inventory["p_cups"] == 0:
-                print("Your inventory is empty :(")
+            if inventory["p_lemons"] <= 0 or inventory["p_ice"] <= 0 or inventory["p_sugar"] <= 0 or inventory["p_cups"] <= 0:
+                print("Need more supplies :(")
                 break
         print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
     else:
@@ -55,4 +55,3 @@ name = input("Hi, What is your name\n")
 intro(name)
 while True:
     day()
-    
