@@ -28,19 +28,19 @@ def day():
     #       DO THING 2}
 
     if choice == "1" or choice =="shop" :
-        print("~~~~~~~~~~~SHOP~~~~~~~~~~")
+        print("~~~~~~~~~~SHOP~~~~~~~~~~")
         while True:
             if shop(inventory) == 0:
                 break
     elif choice == "2" or choice.lower() ==  "see inventory":
-        print("~~~~~~~~~~~INVENTORY~~~~~~~~~~")
+        print("~~~~~~~~~~INVENTORY~~~~~~~~~~")
         see_inven(inventory)
     elif choice == "3" or choice.lower() == "set recipe":
-        print("~~~~~~~~~~~RECIPE~~~~~~~~~~")
+        print("~~~~~~~~~~RECIPE~~~~~~~~~~")
         set_recipe(recipe)
         print(f"In your recipe you have:\n{recipe['r_lemons']} lemons,\n{recipe['r_sugar']} sugar,\n{recipe['r_ice']} ice cubes")
     elif choice == "4" or choice.lower() == "start day":
-        print("~~~~~~~~~~~WERE OPEN FOR BUISNESS~~~~~~~~~~")
+        print("~~~~~~~~~~WERE OPEN FOR BUISNESS~~~~~~~~~~")
         for _ in range(random.randint(0,20)):
             production(recipe, inventory)
             sleep(random.random())
