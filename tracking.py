@@ -31,7 +31,7 @@ def shop(inventory):
         print("You bought 25 ice!")
         print(f"Cash: {inventory['cash']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nIce:{inventory['p_ice']}\nCups:{inventory['p_cups']}" )
         return
-    elif whichProduct == "0" or whichProduct.lower()=="cups":
+    elif whichProduct == "4" or whichProduct.lower()=="cups":
         inventory["cash"] = tracking(inventory["cash"],prices["price_of_cups"])
         inventory["p_cups"] = tracking(inventory["p_cups"],100)
         print("You have bought 100 cups!")

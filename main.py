@@ -4,6 +4,7 @@ import random
 from time import sleep
 from recipe_pricing_messer import set_recipe
 from intro_messer import intro
+
 inventory = {
     "p_sugar": 0,
     "p_lemons" : 0,
@@ -17,6 +18,7 @@ recipe = {
     "r_ice":0,
     "price": 0
 }
+days = 0
 
 def day():
     
@@ -29,8 +31,9 @@ def day():
 
     if choice == "1" or choice =="shop" :
         print("~~~~~~~~~~SHOP~~~~~~~~~~")
-        while True:
-            if shop(inventory) == 0:
+        while shop(inventory) != 0:
+            if inventory['cash'] == 0:
+                print("Out of money:(")
                 break
     elif choice == "2" or choice.lower() ==  "see inventory":
         print("~~~~~~~~~~INVENTORY~~~~~~~~~~")
@@ -48,10 +51,18 @@ def day():
                 print("Need more supplies :(")
                 break
         print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
+        
+        days += 1
+        print(f"End of day {days}")
+        if inventory['cash'] == 0:
+            print("YOU LOSE BRO:(")
     else:
         return 0
 
 name = input("Hi, What is your name\n")
 intro(name)
 while True:
-    day()
+    if day() == 7:
+        if inventory['cash']== 200:
+            print("YOU WIN")
+            print("YAAAAAAAY!!!!!!!!")
