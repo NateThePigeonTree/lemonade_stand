@@ -18,10 +18,10 @@ recipe = {
     "r_ice":0,
     "price": 0
 }
-days = 0
+
 
 def day():
-    
+    days = 0
     choice = input("Which thing do you want to do?\n1.Shop\n2.See inventory\n3.Set recipe\n4.Start Day\n")
 
     # IF choice = 1 OR choice = "words" THEN {
@@ -43,15 +43,15 @@ def day():
         set_recipe(recipe)
         print(f"In your recipe you have:\n{recipe['r_lemons']} lemons,\n{recipe['r_sugar']} sugar,\n{recipe['r_ice']} ice cubes")
     elif choice == "4" or choice.lower() == "start day":
-        print("~~~~~~~~~~WERE OPEN FOR BUISNESS~~~~~~~~~~")
+        print("~~~~~~~~~~WERE OPEN FOR BUSINESS~~~~~~~~~~")
         for _ in range(random.randint(0,20)):
             production(recipe, inventory)
             sleep(random.random())
-            if inventory["p_lemons"] <= 0 or inventory["p_ice"] <= 0 or inventory["p_sugar"] <= 0 or inventory["p_cups"] <= 0:
+        if inventory["p_lemons"] <= 0 or inventory["p_ice"] <= 0 or inventory["p_sugar"] <= 0 or inventory["p_cups"] <= 0:
                 print("Need more supplies :(")
-                break
+            
         print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
-        
+    
         days += 1
         print(f"End of day {days}")
         if inventory['cash'] == 0:
