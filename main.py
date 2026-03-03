@@ -32,7 +32,7 @@ def day():
     if choice == "1" or choice =="shop" :
         print("~~~~~~~~~~SHOP~~~~~~~~~~")
         while shop(inventory) != 0:
-            if inventory['cash'] == 0:
+            if inventory['cash'] <= 0:
                 print("Out of money:(")
                 break
     elif choice == "2" or choice.lower() ==  "see inventory":
@@ -44,9 +44,9 @@ def day():
         print(f"In your recipe you have:\n{recipe['r_lemons']} lemons,\n{recipe['r_sugar']} sugar,\n{recipe['r_ice']} ice cubes")
     elif choice == "4" or choice.lower() == "start day":
         print("~~~~~~~~~~WERE OPEN FOR BUISNESS~~~~~~~~~~")
-        for _ in range(random.randint(0,20)):
+        for _ in range(random.randint(20,50)):
             production(recipe, inventory)
-            sleep(random.random())
+            sleep(random.random()*2)
             if inventory["p_lemons"] <= 0 or inventory["p_ice"] <= 0 or inventory["p_sugar"] <= 0 or inventory["p_cups"] <= 0:
                 print("Need more supplies :(")
                 break
@@ -62,14 +62,15 @@ def day():
 name = input("Hi, What is your name\n")
 intro(name)
 while True:
-    if inventory['cash'] == 0:
+    day()
+    if inventory['cash'] <= 0:
             print("YOU LOSE BRO:(")
             break
-    if day() == 7:
-        if inventory['cash']== 200:
+    if days == 7:
+        if inventory['cash']>= 200:
             print("YOU WIN")
             print("YAAAAAAAY!!!!!!!!")
             break
-        elif inventory['cash'] != 200:
+        elif inventory['cash'] <= 200:
             print("YOU DID NOT MAKE ENOUGH MONEY, AND YOUR FRIEND IS SAD AND HE STILL HASN'T FORGAVE YOU YET") 
-            break   
+            break  
