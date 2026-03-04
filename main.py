@@ -2,8 +2,8 @@ from tracking import shop,see_inven
 from customer import production
 import random
 from time import sleep
-from recipe_pricing_messer import set_recipe
-from intro_messer import intro
+from recipe_pricing import set_recipe
+from intro import intro
 
 inventory = {
     "p_sugar": 0,
