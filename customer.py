@@ -5,7 +5,7 @@ def production(recipe, inventory):
 # Write what you are trying to do as a comment
 # Get customer attributes and compare the attributes to the recipe
 
-    for _ in range(random.randint(20,50)):
+    
         new_customer = Customer()
         random_customer = new_customer.get_customer_attributes() 
         # Compare each aspect of "val" [sweetness, ice, price] to your recipe.

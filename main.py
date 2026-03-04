@@ -5,12 +5,24 @@ from time import sleep
 from recipe_pricing_messer import set_recipe
 from intro_messer import intro
 
+    
+def diff():
+    difficult = input("What difficulty do you want? 1.Easy/ 2.Medium/ 3.Hard/ 4.Impossible \n")
+    if difficult.lower() == "easy" or difficult == "1":
+        return 150
+    elif difficult.lower() == "medium" or difficult == "2":
+        return 115
+    elif difficult.lower() == "hard" or difficult == "3":
+        return 100
+    elif difficult.lower() == "impossible" or difficult == "4":  
+        return 75
+
 inventory = {
-    "p_sugar": 0,
-    "p_lemons" : 0,
-    "p_ice" : 0,
-    "p_cups" : 0,
-    "cash":100}
+        "p_sugar": 0,
+        "p_lemons" : 0,
+        "p_ice" : 0,
+        "p_cups" : 0,
+        "cash":diff()}
 
 recipe = {
     "r_sugar":0,
@@ -19,6 +31,7 @@ recipe = {
     "price": 0
 }
 days = 0
+
 
 def day():
     global days
@@ -61,6 +74,8 @@ def day():
 
 name = input("Hi, What is your name\n")
 intro(name)
+
+
 while True:
     day()
     if inventory['cash'] <= 0:
