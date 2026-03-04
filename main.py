@@ -19,9 +19,14 @@ recipe = {
     "price": 0
 }
 
+days=0
 
 def day():
-    days = 0
+    
+    global days
+
+
+    
     choice = input("Which thing do you want to do?\n1.Shop\n2.See inventory\n3.Set recipe\n4.Start Day\n")
 
     # IF choice = 1 OR choice = "words" THEN {
@@ -55,16 +60,28 @@ def day():
     
         days += 1
         print(f"End of day {days}")
+
         if inventory['cash'] == 0:
             
             print("YOU LOSE BRO:(")
+
+        
+        
+
     else:
         return 0
 
 name = input("Hi, What is your name\n")
 intro(name)
 while True:
+    if inventory['cash'] == 0:
+            print("YOU LOSE BRO:(")
+            break
     if day() == 7:
         if inventory['cash']== 200:
             print("YOU WIN")
             print("YAAAAAAAY!!!!!!!!")
+            break
+        elif inventory['cash'] != 200:
+            print("YOU DID NOT MAKE ENOUGH MONEY, AND YOUR FRIEND IS SAD AND HE STILL HASN'T FORGAVE YOU YET") 
+            break   
