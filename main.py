@@ -2,8 +2,8 @@ from tracking import shop,see_inven
 from customer import production
 import random
 from time import sleep
-from recipe_pricing_messer import set_recipe
-from intro_messer import intro
+from recipe_pricing import set_recipe
+from intro import intro
 
     
 def diff():
@@ -30,11 +30,16 @@ recipe = {
     "r_ice":0,
     "price": 0
 }
-days = 0
+
+days=0
 
 
 def day():
+    
     global days
+
+
+    
     choice = input("Which thing do you want to do?\n1.Shop\n2.See inventory\n3.Set recipe\n4.Start Day\n")
 
     # IF choice = 1 OR choice = "words" THEN {
@@ -45,7 +50,7 @@ def day():
     if choice == "1" or choice =="shop" :
         print("~~~~~~~~~~SHOP~~~~~~~~~~")
         while shop(inventory) != 0:
-            if inventory['cash'] <= 0:
+            if inventory['cash'] == 0:
                 print("Out of money:(")
                 break
     elif choice == "2" or choice.lower() ==  "see inventory":
@@ -56,19 +61,26 @@ def day():
         set_recipe(recipe)
         print(f"In your recipe you have:\n{recipe['r_lemons']} lemons,\n{recipe['r_sugar']} sugar,\n{recipe['r_ice']} ice cubes")
     elif choice == "4" or choice.lower() == "start day":
-        print("~~~~~~~~~~WERE OPEN FOR BUISNESS~~~~~~~~~~")
-        for _ in range(random.randint(20,50)):
+        print("~~~~~~~~~~WERE OPEN FOR BUSINESS~~~~~~~~~~")
+        for _ in range(random.randint(0,20)):
             production(recipe, inventory)
-            sleep(random.random()*2)
+            sleep(random.random())
             if inventory["p_lemons"] <= 0 or inventory["p_ice"] <= 0 or inventory["p_sugar"] <= 0 or inventory["p_cups"] <= 0:
                 print("Need more supplies :(")
                 break
-        print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
         
+            print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
+    
         days += 1
         print(f"End of day {days}")
+
+        if inventory['cash'] == 0:
+            
+            print("YOU LOSE BRO:(")
+
         
         
+
     else:
         return 0
 
@@ -77,15 +89,14 @@ intro(name)
 
 
 while True:
-    day()
-    if inventory['cash'] <= 0:
+    if inventory['cash'] == 0:
             print("YOU LOSE BRO:(")
             break
-    if days == 7:
-        if inventory['cash']>= 200:
+    if day() == 7:
+        if inventory['cash']== 200:
             print("YOU WIN")
             print("YAAAAAAAY!!!!!!!!")
             break
-        elif inventory['cash'] <= 200:
+        elif inventory['cash'] != 200:
             print("YOU DID NOT MAKE ENOUGH MONEY, AND YOUR FRIEND IS SAD AND HE STILL HASN'T FORGAVE YOU YET") 
-            break  
+            break   
