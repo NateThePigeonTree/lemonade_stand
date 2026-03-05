@@ -32,7 +32,6 @@ def production(recipe, inventory):
             inventory["p_cups"] -= 1
             inventory["cash"] += recipe["price"]
             
-        
             # print("DEBUG: LEMONADE BOUGHT")
 
             
