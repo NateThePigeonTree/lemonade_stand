@@ -9,13 +9,13 @@ from intro_messer import intro
 def diff():
     difficult = input("What difficulty do you want? 1.Easy/ 2.Medium/ 3.Hard/ 4.Impossible \n")
     if difficult.lower() == "easy" or difficult == "1":
-        return 150
+        return 175
     elif difficult.lower() == "medium" or difficult == "2":
-        return 115
+        return 150
     elif difficult.lower() == "hard" or difficult == "3":
-        return 100
+        return 115
     elif difficult.lower() == "impossible" or difficult == "4":  
-        return 75
+        return 100
 
 inventory = {
         "p_sugar": 0,
@@ -57,17 +57,18 @@ def day():
         print(f"In your recipe you have:\n{recipe['r_lemons']} lemons,\n{recipe['r_sugar']} sugar,\n{recipe['r_ice']} ice cubes")
     elif choice == "4" or choice.lower() == "start day":
         print("~~~~~~~~~~WERE OPEN FOR BUISNESS~~~~~~~~~~")
-        for _ in range(random.randint(20,50)):
+        for _ in range(random.randint(30,60)):
             production(recipe, inventory)
             sleep(random.random()*2)
             if inventory["p_lemons"] <= 0 or inventory["p_ice"] <= 0 or inventory["p_sugar"] <= 0 or inventory["p_cups"] <= 0:
                 print("Need more supplies :(")
                 break
-        print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
+        
         
         days += 1
         print(f"End of day {days}")
-        
+        print(f"Cash: {inventory['cash']}\nLemons:{inventory['p_lemons']}\nIce: {inventory['p_ice']}\nSugar: {inventory['p_sugar']}\nCups: {inventory['p_cups']}")
+
         
     else:
         return 0
