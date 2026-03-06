@@ -7,7 +7,7 @@ from intro_messer import intro
 
     
 def diff():
-    difficult = input("What difficulty do you want? 1.Easy/ 2.Medium/ 3.Hard/ 4.Impossible \n")
+    difficult = input("What difficulty do you want to play? 1.Easy/ 2.Medium/ 3.Hard/ 4.Impossible \n")
     if difficult.lower() == "easy" or difficult == "1":
         return 175
     elif difficult.lower() == "medium" or difficult == "2":
