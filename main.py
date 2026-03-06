@@ -16,6 +16,7 @@ def diff():
         return 115
     elif difficult.lower() == "impossible" or difficult == "4":  
         return 100
+    
 
 inventory = {
         "p_sugar": 0,
@@ -75,7 +76,6 @@ def day():
 
 name = input("Hi, What is your name\n")
 intro(name)
-
 
 while True:
     day()
