@@ -1,53 +1,50 @@
-lemons = -5
-sugar = -1
-ice= -3
-cups=-3
-p_sugar = 0
-p_lemons = 0
-p_ice = 0
-p_cups = 0
-cash = 100
+prices= {"price_of_lemons":-5,
+         "price_of_sugar": -3,
+         "price_of_ice": -3,
+         "price_of_cups":-5}
+
+
 
 
 def tracking(value, modifier):
     value += modifier
     return value
 
-def shop():
-    global cash
-    global p_lemons 
-    global p_sugar
-    global p_ice
-    global p_cups
+def shop(inventory):
     #p_ice, p_cups, p_sugar
-    whichProduct= input("Which product do you want to buy? Lemons/Sugar/Ice/Cups\n")
-    if whichProduct.lower()=="lemons":
-        cash = tracking(cash,lemons)
-        p_lemons = tracking(p_lemons,50)
+    whichProduct= input("Which product do you want to buy?\n1.Lemons\n2.Sugar\n3.Ice\n4.Cups\n5.Exit shop\n")
+    if whichProduct == "1" or whichProduct.lower()=="lemons":
+        inventory["cash"] = tracking(inventory["cash"],prices["price_of_lemons"])
+        inventory["p_lemons"] = tracking(inventory["p_lemons"],50)
+        print("You bought 50 lemons!")
+        print(f"Cash: {inventory['cash']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nIce:{inventory['p_ice']}\nCups:{inventory['p_ice']} " )
         return
-    elif whichProduct.lower()=="sugar":
-        cash = tracking(cash,sugar)
-        p_sugar = tracking(p_sugar,25)
+    elif whichProduct== "2" or whichProduct.lower()=="sugar":
+        inventory["cash"] = tracking(inventory["cash"], prices["price_of_sugar"])
+        inventory["p_sugar"] = tracking(inventory["p_sugar"],25)
+        print("You bought 25 sugar!")
+        print(f"Cash: {inventory['cash']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nIce:{inventory['p_ice']}\nCups:{inventory['p_cups']}" )
         return
-    elif whichProduct.lower()=="ice":
-        cash = tracking(cash,ice)
-        p_ice = tracking(p_ice,25)
+    elif whichProduct == "3" or whichProduct.lower()=="ice":
+        inventory["cash"]= tracking(inventory["cash"],prices["price_of_ice"])
+        inventory["p_ice"] = tracking(inventory["p_ice"],25)
+        print("You bought 25 ice!")
+        print(f"Cash: {inventory['cash']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nIce:{inventory['p_ice']}\nCups:{inventory['p_cups']}" )
         return
-    elif whichProduct.lower()=="cups":
-        cash== tracking(cash,cups)
-        p_cups = tracking(p_cups,100)
+    elif whichProduct == "4" or whichProduct.lower()=="cups":
+        inventory["cash"] = tracking(inventory["cash"],prices["price_of_cups"])
+        inventory["p_cups"] = tracking(inventory["p_cups"],100)
+        print("You have bought 100 cups!")
+        print(f"Cash: {inventory['cash']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nIce:{inventory['p_ice']}\nCups:{inventory['p_cups']}" )
         return
     else:
         return 0
+    
+def see_inven(inventory):
+    print(f"Cash: {inventory['cash']}\nIce: {inventory['p_ice']}\nLemons:{inventory['p_lemons']}\nSugar:{inventory['p_sugar']}\nCups: {inventory['p_cups']}")
 
-    # BUY LEMONS
+   
+ 
 
-    # LEMONS ARE 5$
 
-    # Money = tracking(Money, lemon_5)
-
-while True:
-    if shop() == 0:
-        break
-print(f"Cash: {cash}\nIce: {p_ice}\nLemons: {p_lemons}\nSugar: {p_sugar}\nCups: {p_cups}")
 
