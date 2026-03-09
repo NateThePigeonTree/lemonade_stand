@@ -68,7 +68,7 @@ def day():
         
         days += 1
         print(f"End of day {days}")
-        print(f"Cash: {inventory['cash']}\nLemons:{inventory['p_lemons']}\nIce: {inventory['p_ice']}\nSugar: {inventory['p_sugar']}\nCups: {inventory['p_cups']}")
+        print(f"Cash: {inventory['cash']}\nLemons:{inventory['p_lemons']}\nSugar: {inventory['p_sugar']}\nIce: {inventory['p_ice']}\nCups: {inventory['p_cups']}")
 
         
     else:
