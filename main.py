@@ -1,4 +1,4 @@
-from tracking import shop,see_inven
+from shopping import shop,see_inven
 from customer import production
 import random
 from time import sleep
