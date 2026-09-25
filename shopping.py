@@ -38,6 +38,7 @@ def shop(inventory):
         return
     elif whichProduct == "4" or whichProduct.lower()=="cups":
         cupsBought= int(input("How many cups would you like?"))
+        prices["price_of_cups"]= prices["price_of_cups"]*cupsBought
         inventory["cash"] = tracking(inventory["cash"],prices["price_of_cups"])
         inventory["p_cups"] = tracking(inventory["p_cups"],cupsBought)
         print("You have bought",cupsBought, "cups!")
