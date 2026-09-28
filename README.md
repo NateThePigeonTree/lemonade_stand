@@ -3,4 +3,5 @@
 This is a game similar to the famous Tycoon on cool math games
 
 Here are the rules: 
-You are starting with 100 dollars and you need to have to make 100 to buy your friend a video game
+You start at either 175, 150, 115, or 100 dollars depending on difficulty.
+There has to be at least 200 dollars in your account at the end of the seven days, or else you lose.
