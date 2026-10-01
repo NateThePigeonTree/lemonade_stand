@@ -13,10 +13,10 @@ def production(recipe, inventory):
         #`if _they_bought:
         #       Do the thing`   
         cold = recipe["r_ice"]
-        sweet = recipe["r_sugar"] - recipe["r_lemons"]
         l_price = recipe["price"]
         # print(f"DEBUG:\nSweet: {random_customer["sweetness"] - sweet}, Cold: {random_customer["ice"]} : {cold}, Price: {random_customer["price"]} : {l_price}")
-        if random_customer["sweetness"] - sweet <= 1:
+        
+        if random_customer["sweetness"] <= 1:
             print("THIS IS TOO SOUR!")
             
         elif random_customer["ice"] <= cold:
